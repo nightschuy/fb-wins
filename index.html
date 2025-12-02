@@ -107,15 +107,27 @@ const App = () => {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    // Dynamically load fonts to match Brand Guidelines (Recoleta & Pragmatica approximations)
+    // 1. Dynamically load fonts to match Brand Guidelines (Recoleta & Pragmatica approximations)
     const link = document.createElement('link');
     link.href = "https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;600;700&display=swap";
     link.rel = "stylesheet";
     document.head.appendChild(link);
 
+    // 2. Inject Tailwind CDN for external publishing (Fixes 'no styling' issue on GitHub Pages)
+    const tailwindScript = document.createElement('script');
+    tailwindScript.src = "https://cdn.tailwindcss.com";
+    document.head.appendChild(tailwindScript);
+
     const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      // Clean up font link on unmount if necessary, but generally safe to leave in single-page apps
+      if (document.head.contains(link)) {
+        document.head.removeChild(link);
+      }
+    };
   }, []);
 
   const stats = [
