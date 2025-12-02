@@ -8,7 +8,7 @@
     <!-- 1. Load Fonts (Brand Guidelines) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;600;700&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
     
     <!-- 2. Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -31,6 +31,16 @@
         /* Custom Font Assignments based on Brand Guidelines */
         body { font-family: 'Inter', sans-serif; }
         h1, h2, h3, h4, h5, .brand-font { font-family: 'DM Serif Display', serif; }
+        .code-font { font-family: 'Fira Code', monospace; }
+        
+        /* Scrollbar hiding for clean terminal look */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
     </style>
 </head>
 <body class="bg-[#f0faf8] text-[#00418a]">
@@ -58,22 +68,151 @@
           Target,
           Cpu,
           Layers,
-          ChevronRight
+          ChevronRight,
+          Terminal,
+          Code2
         } from 'lucide-react';
 
-        /**
-         * BRAND GUIDELINES NOTES:
-         * Colors:
-         * - Navy Blue (Primary Text/Logos): #00418a
-         * - Process Blue (Buttons/Highlights): #0091cc
-         * - Off-White (Backgrounds): #f0faf8
-         * - Orange (Accents only): #f5a83f
-         * - Light Blue (Accents): #b7e0f5
-         */
+        // --- NEW COMPONENT: Landing Page ---
+        const LandingPage = ({ onBegin }) => {
+            return (
+                <div className="fixed inset-0 z-50 bg-[#00418a] flex flex-col items-center justify-center text-white overflow-hidden">
+                    {/* Background decoration */}
+                    <div className="absolute inset-0 opacity-10">
+                        <div className="absolute top-[-20%] left-[-10%] w-[50%] h-[50%] bg-[#0091cc] rounded-full blur-[100px]"></div>
+                        <div className="absolute bottom-[-20%] right-[-10%] w-[50%] h-[50%] bg-[#f5a83f] rounded-full blur-[100px]"></div>
+                    </div>
 
-        /**
-         * Hook for "Reveal on Scroll" animation
-         */
+                    <div className="relative z-10 text-center px-6">
+                        <div className="mb-8 animate-fade-in-up">
+                            <Shield className="w-20 h-20 mx-auto text-[#0091cc] fill-current mb-6" />
+                            <h1 className="text-5xl md:text-7xl brand-font mb-4 tracking-wide">Florida Blue</h1>
+                            <p className="text-[#b7e0f5] uppercase tracking-[0.3em] text-sm md:text-base font-bold">Enterprise Marketing 2025</p>
+                        </div>
+
+                        <button 
+                            onClick={onBegin}
+                            className="group relative inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-[#00418a] bg-white rounded-full overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-[0_0_40px_rgba(255,255,255,0.3)]"
+                        >
+                            <span className="relative z-10 flex items-center">
+                                Begin Experience
+                                <ChevronRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                            </span>
+                            <div className="absolute inset-0 bg-[#b7e0f5] transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500"></div>
+                        </button>
+                    </div>
+                </div>
+            );
+        };
+
+        // --- NEW COMPONENT: Code Visualizer ---
+        const CodeVisualizer = ({ onComplete }) => {
+            const [lines, setLines] = useState([]);
+            const scrollRef = useRef(null);
+
+            // The "Source Code" to display
+            const sourceCode = [
+                "<!DOCTYPE html>",
+                "<html lang='en'>",
+                "<head>",
+                "  <meta name='viewport' content='width=device-width' />",
+                "  <title>Enterprise Marketing 2025</title>",
+                "  <link rel='stylesheet' href='tailwind.css'>",
+                "</head>",
+                "<body>",
+                "  <!-- Initializing React Root -->",
+                "  <div id='root'></div>",
+                "  <script type='text/babel'>",
+                "    import { useState, useEffect } from 'react';",
+                "    ",
+                "    // Loading Brand Guidelines...",
+                "    const COLORS = {",
+                "      navy: '#00418a',",
+                "      processBlue: '#0091cc',",
+                "      accent: '#f5a83f'",
+                "    };",
+                "    ",
+                "    // Compiling Components...",
+                "    const Navbar = () => <nav>...</nav>;",
+                "    const Hero = () => <header>Healthiest You</header>;",
+                "    const Stats = () => <Data value='140M+' />;",
+                "    ",
+                "    // Fetching 2025 Strategy Data...",
+                "    const strategies = [",
+                "      'Generative Search Optimization',",
+                "      'Programmatic TV Buying',",
+                "      'Omnichannel Journeys'",
+                "    ];",
+                "    ",
+                "    // Rendering Application...",
+                "    function App() {",
+                "      return (",
+                "        <div className='experience-layer'>",
+                "           <Navigation />",
+                "           <HeroSection />",
+                "           <StatsBar />",
+                "        </div>",
+                "      );",
+                "    }",
+                "    ",
+                "    root.render(<App />);",
+                "  <\/script>",
+                "</body>",
+                "</html>",
+                "// BUILD COMPLETE. LAUNCHING..."
+            ];
+
+            useEffect(() => {
+                let currentIndex = 0;
+                
+                const interval = setInterval(() => {
+                    if (currentIndex < sourceCode.length) {
+                        setLines(prev => [...prev, sourceCode[currentIndex]]);
+                        currentIndex++;
+                        
+                        // Auto scroll
+                        if (scrollRef.current) {
+                            scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
+                        }
+                    } else {
+                        clearInterval(interval);
+                        setTimeout(onComplete, 800); // Slight pause before switching
+                    }
+                }, 40); // Speed of typing (ms)
+
+                return () => clearInterval(interval);
+            }, []);
+
+            return (
+                <div className="fixed inset-0 z-50 bg-[#0f172a] text-green-400 font-mono text-sm md:text-base p-6 md:p-12 overflow-hidden flex flex-col items-center justify-center">
+                    <div className="w-full max-w-4xl h-[80vh] border border-gray-700 bg-[#1e293b]/50 rounded-lg shadow-2xl backdrop-blur-md flex flex-col">
+                        <div className="flex items-center space-x-2 px-4 py-3 border-b border-gray-700 bg-[#1e293b]">
+                            <div className="w-3 h-3 rounded-full bg-red-500"></div>
+                            <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+                            <div className="w-3 h-3 rounded-full bg-green-500"></div>
+                            <span className="ml-4 text-gray-400 text-xs font-sans">building_experience.js</span>
+                        </div>
+                        <div 
+                            ref={scrollRef} 
+                            className="flex-1 p-6 overflow-y-auto no-scrollbar code-font space-y-1"
+                        >
+                            {lines.map((line, i) => (
+                                <div key={i} className="opacity-90">
+                                    <span className="text-gray-600 select-none mr-4 text-xs">{(i + 1).toString().padStart(2, '0')}</span>
+                                    <span className={line.includes('//') ? 'text-gray-500 italic' : line.includes('<') ? 'text-blue-300' : 'text-green-300'}>
+                                        {line}
+                                    </span>
+                                </div>
+                            ))}
+                            <div className="animate-pulse">_</div>
+                        </div>
+                    </div>
+                </div>
+            );
+        };
+
+        // --- ORIGINAL COMPONENT LOGIC (Preserved) ---
+        
         const useRevealOnScroll = (threshold = 0.1) => {
           const [isVisible, setIsVisible] = useState(false);
           const ref = useRef(null);
@@ -133,7 +272,6 @@
           return <span ref={ref}>{count}{suffix}</span>;
         };
 
-        // Florida Blue Specific "Three Arrows" Graphic Device
         const ArrowDevice = ({ className = "w-12 h-12", color = "#0091cc" }) => (
           <div className={`flex space-x-[-12px] ${className}`}>
             <ChevronRight strokeWidth={4} color={color} className="w-full h-full" />
@@ -142,7 +280,8 @@
           </div>
         );
 
-        const App = () => {
+        // Renamed original App to MainSiteContent to manage state
+        const MainSiteContent = () => {
           const [isMenuOpen, setIsMenuOpen] = useState(false);
           const [scrolled, setScrolled] = useState(false);
 
@@ -205,7 +344,7 @@
           ];
 
           return (
-            <div className="min-h-screen overflow-x-hidden selection:bg-[#b7e0f5]">
+            <div className="min-h-screen overflow-x-hidden selection:bg-[#b7e0f5] animate-fade-in">
               
               {/* Navigation */}
               <nav className={`fixed w-full z-50 transition-all duration-500 ${scrolled ? 'bg-white/95 backdrop-blur-md shadow-md py-2' : 'bg-white py-4 border-b border-[#b7e0f5]'}`}>
@@ -214,9 +353,9 @@
                     {/* Brand Logo Area - Florida Blue Style */}
                     <div className="flex items-center space-x-3 group cursor-pointer">
                       <div className="flex items-center justify-center">
-                         <Shield className="w-8 h-8 text-[#0091cc] fill-current" />
-                         <div className="ml-1 w-2 h-8 bg-[#0091cc] rounded-sm"></div>
-                         <div className="ml-1 w-8 h-2 bg-[#0091cc] rounded-sm absolute"></div>
+                          <Shield className="w-8 h-8 text-[#0091cc] fill-current" />
+                          <div className="ml-1 w-2 h-8 bg-[#0091cc] rounded-sm"></div>
+                          <div className="ml-1 w-8 h-2 bg-[#0091cc] rounded-sm absolute"></div>
                       </div>
                       <div className="leading-none">
                         <h1 className="text-[#0091cc] text-2xl tracking-wide italic brand-font">Florida Blue</h1>
@@ -486,20 +625,20 @@
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                   <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
                     <div className="col-span-1 md:col-span-1">
-                       <div className="flex items-center space-x-2 mb-6">
-                          <Shield className="w-6 h-6 text-[#0091cc] fill-current" />
-                          <span className="text-xl tracking-wide brand-font">Florida Blue</span>
-                       </div>
-                       <p className="text-[#00418a]/60 text-sm leading-relaxed mb-6 font-medium">
-                         Your Health Solutions Partner. <br/> A 2025 Internal Performance Report.
-                       </p>
-                       <div className="flex space-x-4">
-                         {[1,2,3].map(i => (
-                           <div key={i} className="w-8 h-8 bg-white border border-[#b7e0f5] rounded-full hover:bg-[#0091cc] hover:border-[#0091cc] hover:text-white transition-colors cursor-pointer flex items-center justify-center text-[#0091cc]">
-                             <div className="w-2 h-2 bg-current rounded-full"></div>
-                           </div>
-                         ))}
-                       </div>
+                        <div className="flex items-center space-x-2 mb-6">
+                           <Shield className="w-6 h-6 text-[#0091cc] fill-current" />
+                           <span className="text-xl tracking-wide brand-font">Florida Blue</span>
+                        </div>
+                        <p className="text-[#00418a]/60 text-sm leading-relaxed mb-6 font-medium">
+                          Your Health Solutions Partner. <br/> A 2025 Internal Performance Report.
+                        </p>
+                        <div className="flex space-x-4">
+                          {[1,2,3].map(i => (
+                            <div key={i} className="w-8 h-8 bg-white border border-[#b7e0f5] rounded-full hover:bg-[#0091cc] hover:border-[#0091cc] hover:text-white transition-colors cursor-pointer flex items-center justify-center text-[#0091cc]">
+                              <div className="w-2 h-2 bg-current rounded-full"></div>
+                            </div>
+                          ))}
+                        </div>
                     </div>
                     
                     <div>
@@ -546,9 +685,33 @@
           );
         };
 
+        // --- MASTER APP COMPONENT ---
+        const App = () => {
+            const [view, setView] = useState('LANDING'); // LANDING | BUILDING | SITE
+
+            if (view === 'LANDING') {
+                return <LandingPage onBegin={() => setView('BUILDING')} />;
+            }
+
+            if (view === 'BUILDING') {
+                return <CodeVisualizer onComplete={() => setView('SITE')} />;
+            }
+
+            return <MainSiteContent />;
+        };
+
         const container = document.getElementById('root');
         const root = createRoot(container);
         root.render(<App />);
     </script>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            animation: fadeIn 1.5s ease-out forwards;
+        }
+    </style>
 </body>
 </html>
