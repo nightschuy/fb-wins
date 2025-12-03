@@ -47,15 +47,6 @@
             0% { transform: translateY(-100%); }
             100% { transform: translateY(100%); }
         }
-
-        /* Rainbow Animation */
-        @keyframes rainbow-rotate {
-            0% { filter: hue-rotate(0deg); }
-            100% { filter: hue-rotate(360deg); }
-        }
-        .feeling-lucky-mode {
-            animation: rainbow-rotate 0.5s linear 3; /* 0.5s per rotation, 3 times */
-        }
     </style>
 </head>
 <body class="bg-[#f0faf8] text-[#00418a]">
@@ -884,6 +875,14 @@
         }
         .shadow-green-glow {
             text-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+        }
+        /* Rainbow Animation - MOVED HERE FOR SPECIFICITY */
+        @keyframes rainbow-rotate {
+            0% { filter: hue-rotate(0deg); }
+            100% { filter: hue-rotate(360deg); }
+        }
+        .feeling-lucky-mode {
+            animation: rainbow-rotate 0.5s linear 3 !important; /* Force priority */
         }
     </style>
 </body>
