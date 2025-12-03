@@ -583,8 +583,7 @@
 
               {/* Hero Section */}
               {/* Increased bottom padding on mobile (pb-32) to prevent content cutoff by stats bar overlap */}
-              <div className="pt-24 pb-32 md:pt-32 md:pb-40 bg-white relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-1/2 h-full bg-[#f0faf8] rounded-bl-[200px] z-0"></div>
+              <div className="pt-24 pb-32 md:pt-32 md:pb-40 bg-gradient-to-br from-[#00418a] to-[#0091cc] relative overflow-hidden">
                 
                 <div className="absolute right-10 top-1/3 opacity-20 hidden lg:block">
                    <ArrowDevice className="w-64 h-64" color="#b7e0f5" />
@@ -593,23 +592,23 @@
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                   <div className="max-w-4xl">
                     <Reveal>
-                      <div className="inline-flex items-center space-x-2 bg-[#f0faf8] rounded-full px-4 py-1 mb-6 border border-[#b7e0f5]">
-                        <span className="w-2 h-2 bg-[#0091cc] rounded-full animate-pulse"></span>
-                        <span className="text-sm font-bold text-[#00418a] tracking-wide uppercase">2025 Strategic Review</span>
+                      <div className="inline-flex items-center space-x-2 bg-white/10 rounded-full px-4 py-1 mb-6 border border-white/20">
+                        <span className="w-2 h-2 bg-white rounded-full animate-pulse"></span>
+                        <span className="text-sm font-bold text-white tracking-wide uppercase">2025 Strategic Review</span>
                       </div>
                     </Reveal>
                     
                     <Reveal delay={200}>
-                      <h1 className="text-5xl md:text-7xl text-[#00418a] mb-6 leading-[1.1] brand-font">
+                      <h1 className="text-5xl md:text-7xl text-white mb-6 leading-[1.1] brand-font">
                         Let's find the <br/>
                         healthiest you. <br/>
-                        <span className="text-[#0091cc]">Let's Keep Solving.</span>
+                        <span className="text-[#b7e0f5]">Let's Keep Solving.</span>
                       </h1>
                     </Reveal>
 
                     <Reveal delay={400}>
-                      <p className="text-xl text-[#00418a]/80 mb-10 font-light leading-relaxed max-w-2xl">
-                        A unified year of impact. We bridged the gap between complex data and human care, delivering <span className="font-semibold">15 million personalized health solutions</span> to our communities.
+                      <p className="text-xl text-white/80 mb-10 font-light leading-relaxed max-w-2xl">
+                        A unified year of impact. We bridged the gap between complex data and human care, delivering <span className="font-semibold text-white">15 million personalized health solutions</span> to our communities.
                       </p>
                     </Reveal>
 
@@ -617,13 +616,13 @@
                       <div className="flex flex-col sm:flex-row gap-4 items-center">
                         <button 
                             onClick={handleScrollToPanels} 
-                            className="group bg-[#0091cc] hover:bg-[#007bb5] text-white px-8 py-4 rounded-md font-bold transition-all shadow-lg hover:shadow-[#0091cc]/30 hover:-translate-y-1 flex items-center justify-center min-w-[200px]"
+                            className="group bg-white hover:bg-white/90 text-[#00418a] px-8 py-4 rounded-md font-bold transition-all shadow-lg hover:shadow-white/30 hover:-translate-y-1 flex items-center justify-center min-w-[200px]"
                         >
                           Explore Solutions
                           <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                         </button>
-                        <div className="flex items-center text-[#00418a] font-semibold cursor-pointer group">
-                          <div className="w-12 h-12 rounded-full border-2 border-[#0091cc] flex items-center justify-center mr-3 group-hover:bg-[#0091cc] group-hover:text-white transition-colors">
+                        <div className="flex items-center text-white font-semibold cursor-pointer group">
+                          <div className="w-12 h-12 rounded-full border-2 border-white flex items-center justify-center mr-3 group-hover:bg-white group-hover:text-[#00418a] transition-colors">
                             <Play className="w-5 h-5 ml-1 fill-current" />
                           </div>
                           Watch 2025 Recap
