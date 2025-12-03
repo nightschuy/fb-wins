@@ -47,6 +47,15 @@
             0% { transform: translateY(-100%); }
             100% { transform: translateY(100%); }
         }
+
+        /* Rainbow Animation */
+        @keyframes rainbow-rotate {
+            0% { filter: hue-rotate(0deg); }
+            100% { filter: hue-rotate(360deg); }
+        }
+        .feeling-lucky-mode {
+            animation: rainbow-rotate 0.5s linear 3; /* 0.5s per rotation, 3 times */
+        }
     </style>
 </head>
 <body class="bg-[#f0faf8] text-[#00418a]">
@@ -87,7 +96,7 @@
         const LandingPage = ({ onBegin }) => {
             const [inputText, setInputText] = useState("");
             const [isTyping, setIsTyping] = useState(false);
-            const fullPrompt = "Can you build me a website to show Enterprise Digital Marketing and Media Strategy's 2025 accomplishments?";
+            const fullPrompt = "Can you build me a website to show Enterprise Digital Marketing and Media Strategy's 2025 achievements?";
 
             const handleBegin = () => {
                 if (!isTyping) {
@@ -305,9 +314,10 @@
                         }
                     } else {
                         clearInterval(interval);
-                        setTimeout(onComplete, 800); // Slight pause before switching
+                        // Wait a moment after typing completes before transitioning
+                        setTimeout(onComplete, 1500); // Increased pause to 1.5s
                     }
-                }, 40); // Speed of typing (ms)
+                }, 120); // Slowed typing speed to 120ms per line
 
                 return () => clearInterval(interval);
             }, []);
@@ -424,12 +434,22 @@
         const MainSiteContent = () => {
           const [isMenuOpen, setIsMenuOpen] = useState(false);
           const [scrolled, setScrolled] = useState(false);
+          const [isLucky, setIsLucky] = useState(false);
 
           useEffect(() => {
             const handleScroll = () => setScrolled(window.scrollY > 20);
             window.addEventListener('scroll', handleScroll);
             return () => window.removeEventListener('scroll', handleScroll);
           }, []);
+
+          const handleLucky = () => {
+              if (isLucky) return;
+              setIsLucky(true);
+              // Animation is 0.5s * 3 iterations = 1500ms
+              setTimeout(() => {
+                  setIsLucky(false);
+              }, 1500);
+          };
 
           const stats = [
             { label: "Total Reach", value: 140, suffix: "M+", desc: "Across Paid & Owned Channels" },
@@ -484,7 +504,7 @@
           ];
 
           return (
-            <div className="min-h-screen overflow-x-hidden selection:bg-[#b7e0f5] animate-fade-in">
+            <div className={`min-h-screen overflow-x-hidden selection:bg-[#b7e0f5] animate-fade-in ${isLucky ? 'feeling-lucky-mode' : ''}`}>
               
               {/* Navigation */}
               <nav className={`fixed w-full z-50 transition-all duration-500 ${scrolled ? 'bg-white/95 backdrop-blur-md shadow-md py-2' : 'bg-white py-4 border-b border-[#b7e0f5]'}`}>
@@ -509,8 +529,12 @@
                           <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#0091cc] transition-all duration-300 group-hover:w-full"></span>
                         </a>
                       ))}
-                      <button className="bg-[#0091cc] hover:bg-[#007bb5] text-white px-6 py-2 rounded-full font-semibold text-sm transition-all shadow-sm hover:shadow-lg flex items-center">
-                        Download Report
+                      <button 
+                        onClick={handleLucky}
+                        className={`bg-gradient-to-r from-[#0091cc] to-[#36c] hover:from-[#f5a83f] hover:to-[#e0922f] text-white px-6 py-2 rounded-full font-semibold text-sm transition-all shadow-sm hover:shadow-lg flex items-center transform hover:scale-105 active:scale-95`}
+                      >
+                        <Zap className="w-4 h-4 mr-2" />
+                        Feeling Lucky
                       </button>
                     </div>
 
