@@ -98,8 +98,99 @@
           Smile,
           Monitor,
           Moon,
-          Sun
+          Sun,
+          Languages
         } from 'lucide-react';
+
+        // --- CONTENT DICTIONARY FOR TRANSLATION ---
+        const SITE_CONTENT = {
+            en: {
+                nav: ['2025 Overview', 'Media Mix', 'Digital Strategy', 'Future Roadmap'],
+                danceMode: 'Dance Mode',
+                heroBadge: '2025 Strategic Review',
+                heroTitle: <>Let's find the <br/> healthiest you. <br/><span className="text-[#b7e0f5]">Let's Keep Solving.</span></>,
+                heroDesc: <>A unified year of impact. We bridged the gap between complex data and human care, delivering <span className="font-semibold text-white">15 million personalized health solutions</span> to our communities.</>,
+                btnExplore: 'Explore Solutions',
+                btnWatch: 'Watch 2025 Recap',
+                stats: [
+                    { label: "Total Reach", value: 140, suffix: "M+", desc: "Across Paid & Owned Channels" },
+                    { label: "Media ROI", value: 35, suffix: "%", desc: "Increase in efficiency YoY" },
+                    { label: "Active Members", value: 15, suffix: "M", desc: "Engaged digitally monthly" },
+                    { label: "Conversion Rate", value: 4, suffix: "x", desc: "Lift from personalization" }
+                ],
+                strategyTitle: 'Integrated Health Solutions',
+                strategyDesc: 'In 2025, we dissolved the silos between "Media" and "Product". By combining our media buying power with our digital product innovations, we created a seamless ecosystem for our members.',
+                strategies: [
+                    { title: "Generative Search Optimization", type: "Media Strategy", desc: "Shifted 40% of SEO budget to optimize for AI answer engines, securing top visibility for 'Health Plan' queries.", metric: "12% Organic Traffic Lift", keyResult: "Key Result" },
+                    { title: "Programmatic TV Buying", type: "Media Strategy", desc: "Unified linear and streaming TV buys under a single programmatic umbrella to target specific health-intent audiences.", metric: "98% Ad Completion Rate", keyResult: "Key Result" },
+                    { title: "Omnichannel Health Journeys", type: "Media Strategy", desc: "Launched a unified dashboard integrating claims and wellness. If a user clicks an ad, their app experience adapts instantly.", metric: "35% Lower Friction", keyResult: "Key Result" },
+                    { title: "Predictive Audience Modeling", type: "Digital Marketing", desc: "Used first-party data to build 'Health-Ready' lookalike audiences, suppressing current members to focus purely on efficiency.", metric: "$12M Media Savings", keyResult: "Key Result" },
+                    { title: "AI-Driven Preventative Care", type: "Digital Marketing", desc: "Deployed predictive models to send personalized screening reminders via email and SMS, improving early detection rates.", metric: "2.1M Reminders Sent", keyResult: "Key Result" },
+                    { title: "Inclusive Design System", type: "Digital Marketing", desc: "Achieved WCAG 2.2 AAA compliance across all media assets and public-facing portals, ensuring access for every Floridian.", metric: "100% Compliant", keyResult: "Key Result" }
+                ],
+                platformBadge: 'Platform Spotlight',
+                platformTitle: <>The "HealthFirst" <br/> Unified Member Portal</>,
+                platformDesc: 'We deprecated legacy systems to launch a fully reactive, cloud-native member portal. The result? A unified experience that puts care at the center, regardless of where the member enters the ecosystem.',
+                platformList: [
+                    "Real-time claims processing visibility",
+                    "Integrated virtual care scheduling API",
+                    "Family account management in one view"
+                ],
+                btnCaseStudy: 'View The Case Study',
+                quote: "In 2025, we stopped thinking about 'Digital Marketing' and 'Media' as separate disciplines. We proved that when you align the message with the medium, you don't just get impressions—you get solutions.",
+                quoteAuthor: 'Sarah Jenkins',
+                quoteTitle: 'VP, Enterprise Strategy',
+                footerTagline: <>Your Health Solutions Partner. <br/> A 2025 Internal Performance Report.</>,
+                footerHeaders: ['Achievements', 'Internal Resources', 'Contact Strategy'],
+                footerLinks1: ['Media Efficiency', 'Telehealth Adoption', 'AI Innovation', 'Geo-Targeting'],
+                footerLinks2: ['Brand Guidelines 2025', 'Media Asset Library', 'Team Directory', 'Submit a Ticket'],
+                footerCopyright: '© 2025 Florida Blue. Internal Use Only.',
+                footerLegal: ['Privacy Policy', 'Terms of Use', 'Accessibility']
+            },
+            es: {
+                nav: ['Resumen 2025', 'Mezcla de Medios', 'Estrategia Digital', 'Hoja de Ruta'],
+                danceMode: 'Modo Baile',
+                heroBadge: 'Revisión Estratégica 2025',
+                heroTitle: <>Encontremos tu <br/> mejor versión. <br/><span className="text-[#b7e0f5]">Sigamos Solucionando.</span></>,
+                heroDesc: <>Un año unificado de impacto. Cerramos la brecha entre datos complejos y atención humana, entregando <span className="font-semibold text-white">15 millones de soluciones de salud</span> a nuestras comunidades.</>,
+                btnExplore: 'Explorar Soluciones',
+                btnWatch: 'Ver Resumen 2025',
+                stats: [
+                    { label: "Alcance Total", value: 140, suffix: "M+", desc: "En canales pagados y propios" },
+                    { label: "ROI de Medios", value: 35, suffix: "%", desc: "Aumento en eficiencia anual" },
+                    { label: "Miembros Activos", value: 15, suffix: "M", desc: "Comprometidos digitalmente" },
+                    { label: "Tasa Conversión", value: 4, suffix: "x", desc: "Aumento por personalización" }
+                ],
+                strategyTitle: 'Soluciones de Salud Integradas',
+                strategyDesc: 'En 2025, disolvimos los silos entre "Medios" y "Producto". Al combinar nuestro poder de compra de medios con nuestras innovaciones de productos digitales, creamos un ecosistema perfecto para nuestros miembros.',
+                strategies: [
+                    { title: "Optimización de Búsqueda Generativa", type: "Estrategia de Medios", desc: "Se reasignó el 40% del presupuesto SEO para optimizar motores de respuesta IA, asegurando visibilidad para consultas de 'Plan de Salud'.", metric: "12% Aumento Tráfico", keyResult: "Resultado Clave" },
+                    { title: "Compra de TV Programática", type: "Estrategia de Medios", desc: "Compras unificadas de TV lineal y streaming bajo un paraguas programático para dirigirse a audiencias con intención de salud.", metric: "98% Tasa Completada", keyResult: "Resultado Clave" },
+                    { title: "Viajes de Salud Omnicanal", type: "Estrategia de Medios", desc: "Lanzamiento de un panel unificado integrando reclamos y bienestar. Si un usuario hace clic en un anuncio, su app se adapta.", metric: "35% Menos Fricción", keyResult: "Resultado Clave" },
+                    { title: "Modelado de Audiencia Predictivo", type: "Marketing Digital", desc: "Uso de datos propios para crear audiencias similares 'Listas para Salud', suprimiendo miembros actuales para eficiencia.", metric: "$12M Ahorro Medios", keyResult: "Resultado Clave" },
+                    { title: "Atención Preventiva Impulsada por IA", type: "Marketing Digital", desc: "Modelos predictivos para enviar recordatorios personalizados por correo y SMS, mejorando tasas de detección temprana.", metric: "2.1M Recordatorios", keyResult: "Resultado Clave" },
+                    { title: "Sistema de Diseño Inclusivo", type: "Marketing Digital", desc: "Cumplimiento WCAG 2.2 AAA en todos los activos de medios y portales públicos, asegurando acceso para cada floridano.", metric: "100% Cumplimiento", keyResult: "Resultado Clave" }
+                ],
+                platformBadge: 'Plataforma Destacada',
+                platformTitle: <>El Portal Unificado <br/> "HealthFirst"</>,
+                platformDesc: 'Desaprobamos sistemas heredados para lanzar un portal nativo de la nube. ¿El resultado? Una experiencia unificada que pone la atención en el centro, sin importar dónde entre el miembro.',
+                platformList: [
+                    "Visibilidad de procesamiento de reclamos en tiempo real",
+                    "API integrada de programación de atención virtual",
+                    "Gestión de cuentas familiares en una sola vista"
+                ],
+                btnCaseStudy: 'Ver Estudio de Caso',
+                quote: "En 2025, dejamos de pensar en 'Marketing Digital' y 'Medios' como disciplinas separadas. Demostramos que cuando alineas el mensaje con el medio, no solo obtienes impresiones, obtienes soluciones.",
+                quoteAuthor: 'Sarah Jenkins',
+                quoteTitle: 'VP, Estrategia Empresarial',
+                footerTagline: <>Tu Socio en Soluciones de Salud. <br/> Informe de Desempeño Interno 2025.</>,
+                footerHeaders: ['Logros', 'Recursos Internos', 'Estrategia de Contacto'],
+                footerLinks1: ['Eficiencia de Medios', 'Adopción Telemedicina', 'Innovación IA', 'Geo-Targeting'],
+                footerLinks2: ['Guías de Marca 2025', 'Biblioteca de Activos', 'Directorio de Equipo', 'Enviar Ticket'],
+                footerCopyright: '© 2025 Florida Blue. Solo Uso Interno.',
+                footerLegal: ['Política de Privacidad', 'Términos de Uso', 'Accesibilidad']
+            }
+        };
 
         // --- NEW COMPONENT: Landing Page (GuideWell Chat Style) ---
         const LandingPage = ({ onBegin }) => {
@@ -487,13 +578,20 @@
           const [scrolled, setScrolled] = useState(false);
           const [isDancing, setIsDancing] = useState(false);
           const [isDarkMode, setIsDarkMode] = useState(false); // Dark Mode State
+          const [lang, setLang] = useState('en'); // Language State: 'en' or 'es'
           const panelsRef = useRef(null); // Ref for scrolling
+
+          const t = SITE_CONTENT[lang]; // Translation helper
 
           useEffect(() => {
             const handleScroll = () => setScrolled(window.scrollY > 20);
             window.addEventListener('scroll', handleScroll);
             return () => window.removeEventListener('scroll', handleScroll);
           }, []);
+
+          const toggleLanguage = () => {
+              setLang(prev => prev === 'en' ? 'es' : 'en');
+          };
 
           const handleDance = () => {
               if (isDancing) return;
@@ -588,13 +686,23 @@
 
                     {/* Desktop Menu */}
                     <div className="hidden lg:flex items-center space-x-6">
-                      {['2025 Overview', 'Media Mix', 'Digital Strategy', 'Future Roadmap'].map((item) => (
+                      {t.nav.map((item) => (
                         <a key={item} href="#" onClick={handleDisclaimerClick} className={`relative font-medium text-sm transition-colors group ${isDarkMode ? 'text-gray-300 hover:text-white' : 'text-[#00418a] hover:text-[#0091cc]'}`}>
                           {item}
                           <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#0091cc] transition-all duration-300 group-hover:w-full"></span>
                         </a>
                       ))}
                       
+                      {/* Language Toggle Desktop */}
+                      <button 
+                        onClick={toggleLanguage}
+                        className={`p-2 rounded-full transition-colors font-bold text-xs flex items-center ${isDarkMode ? 'bg-gray-800 text-gray-300 hover:bg-gray-700' : 'bg-gray-100 text-[#00418a] hover:bg-gray-200'}`}
+                        title={lang === 'en' ? "Switch to Spanish" : "Cambiar a Inglés"}
+                      >
+                        <Languages className="w-4 h-4 mr-1" />
+                        {lang === 'en' ? 'ES' : 'EN'}
+                      </button>
+
                       {/* Dark Mode Toggle Desktop */}
                       <button 
                         onClick={() => setIsDarkMode(!isDarkMode)}
@@ -608,13 +716,21 @@
                         className={`bg-gradient-to-r from-[#0091cc] to-[#36c] hover:from-[#f5a83f] hover:to-[#e0922f] text-white px-6 py-2 rounded-full font-semibold text-sm transition-all shadow-sm hover:shadow-lg flex items-center transform hover:scale-105 active:scale-95`}
                       >
                         <Music className="w-4 h-4 mr-2" />
-                        Dance Mode
+                        {t.danceMode}
                       </button>
                     </div>
 
                     {/* Mobile Menu Button */}
                     <div className="lg:hidden flex items-center space-x-4">
-                        {/* Dark Mode Toggle Mobile (outside hamburger for access) */}
+                        {/* Language Toggle Mobile */}
+                        <button 
+                            onClick={toggleLanguage}
+                            className={`p-2 rounded-full transition-colors ${isDarkMode ? 'bg-gray-800 text-white' : 'bg-gray-100 text-[#00418a]'}`}
+                        >
+                            <span className="font-bold text-xs">{lang === 'en' ? 'ES' : 'EN'}</span>
+                        </button>
+
+                        {/* Dark Mode Toggle Mobile */}
                         <button 
                             onClick={() => setIsDarkMode(!isDarkMode)}
                             className={`p-2 rounded-full transition-colors ${isDarkMode ? 'bg-gray-800 text-yellow-400' : 'bg-gray-100 text-gray-500'}`}
@@ -631,7 +747,7 @@
                 {/* Mobile Menu Dropdown */}
                 <div className={`lg:hidden border-t absolute w-full transition-all duration-300 origin-top ${isDarkMode ? 'bg-gray-900 border-gray-700' : 'bg-white border-[#b7e0f5]'} ${isMenuOpen ? 'scale-y-100 opacity-100' : 'scale-y-0 opacity-0 h-0'}`}>
                     <div className="px-4 pt-2 pb-6 space-y-1">
-                      {['2025 Overview', 'Media Mix', 'Digital Strategy', 'Future Roadmap'].map((item) => (
+                      {t.nav.map((item) => (
                         <a key={item} href="#" onClick={handleDisclaimerClick} className={`block px-3 py-3 text-base font-medium rounded-md ${isDarkMode ? 'text-gray-300 hover:bg-gray-800' : 'text-[#00418a] hover:text-[#0091cc] hover:bg-[#f0faf8]'}`}>
                           {item}
                         </a>
@@ -642,7 +758,7 @@
                         className="w-full mt-2 bg-gradient-to-r from-[#0091cc] to-[#36c] text-white px-3 py-3 rounded-md font-semibold text-base transition-all shadow-sm flex items-center justify-center"
                       >
                         <Music className="w-5 h-5 mr-2" />
-                        Dance Mode
+                        {t.danceMode}
                       </button>
                     </div>
                 </div>
@@ -662,21 +778,19 @@
                     <Reveal>
                       <div className="inline-flex items-center space-x-2 bg-white/10 rounded-full px-4 py-1 mb-6 border border-white/20">
                         <span className="w-2 h-2 bg-white rounded-full animate-pulse"></span>
-                        <span className="text-sm font-bold text-white tracking-wide uppercase">2025 Strategic Review</span>
+                        <span className="text-sm font-bold text-white tracking-wide uppercase">{t.heroBadge}</span>
                       </div>
                     </Reveal>
                     
                     <Reveal delay={200}>
                       <h1 className="text-5xl md:text-7xl text-white mb-6 leading-[1.1] brand-font">
-                        Let's find the <br/>
-                        healthiest you. <br/>
-                        <span className="text-[#b7e0f5]">Let's Keep Solving.</span>
+                        {t.heroTitle}
                       </h1>
                     </Reveal>
 
                     <Reveal delay={400}>
                       <p className="text-xl text-white/80 mb-10 font-light leading-relaxed max-w-2xl">
-                        A unified year of impact. We bridged the gap between complex data and human care, delivering <span className="font-semibold text-white">15 million personalized health solutions</span> to our communities.
+                        {t.heroDesc}
                       </p>
                     </Reveal>
 
@@ -686,7 +800,7 @@
                             onClick={handleScrollToPanels} 
                             className="group bg-white hover:bg-white/90 text-[#00418a] px-8 py-4 rounded-md font-bold transition-all shadow-lg hover:shadow-white/30 hover:-translate-y-1 flex items-center justify-center min-w-[200px]"
                         >
-                          Explore Solutions
+                          {t.btnExplore}
                           <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                         </button>
                         <div 
@@ -696,7 +810,7 @@
                           <div className="w-12 h-12 rounded-full border-2 border-white flex items-center justify-center mr-3 group-hover:bg-white group-hover:text-[#00418a] transition-colors">
                             <Play className="w-5 h-5 ml-1 fill-current" />
                           </div>
-                          Watch 2025 Recap
+                          {t.btnWatch}
                         </div>
                       </div>
                     </Reveal>
@@ -708,7 +822,7 @@
               <div className="relative -mt-20 z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <Reveal delay={800}>
                   <div className={`rounded-xl shadow-2xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 divide-y md:divide-y-0 md:divide-x overflow-hidden ${isDarkMode ? 'bg-gray-800 text-white divide-gray-700' : 'bg-[#00418a] text-white divide-[#0091cc]/30'}`}>
-                    {stats.map((stat, idx) => (
+                    {t.stats.map((stat, idx) => (
                       <div key={idx} className={`p-8 text-center transition-colors group relative overflow-hidden ${isDarkMode ? 'hover:bg-gray-700' : 'hover:bg-[#003366]'}`}>
                         <div className="absolute top-0 right-0 p-2 opacity-0 group-hover:opacity-20 transition-opacity">
                            <ArrowDevice className="w-16 h-16" color="#ffffff" />
@@ -732,22 +846,29 @@
                       <div className={`inline-block p-3 rounded-full mb-4 ${isDarkMode ? 'bg-gray-800' : 'bg-[#b7e0f5]/30'}`}>
                         <Layers className={`w-8 h-8 ${isDarkMode ? 'text-[#0091cc]' : 'text-[#00418a]'}`} />
                       </div>
-                      <h2 className={`text-4xl mb-4 brand-font ${isDarkMode ? 'text-white' : 'text-[#00418a]'}`}>Integrated Health Solutions</h2>
+                      <h2 className={`text-4xl mb-4 brand-font ${isDarkMode ? 'text-white' : 'text-[#00418a]'}`}>{t.strategyTitle}</h2>
                       <div className="w-24 h-1.5 bg-[#0091cc] mx-auto mb-6 rounded-full"></div>
                       <p className={`max-w-3xl mx-auto text-lg leading-relaxed ${isDarkMode ? 'text-gray-400' : 'text-[#00418a]/70'}`}>
-                        In 2025, we dissolved the silos between "Media" and "Product". By combining our media buying power with our digital product innovations, we created a seamless ecosystem for our members.
+                        {t.strategyDesc}
                       </p>
                     </div>
                   </Reveal>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {integratedStrategy.map((item, idx) => (
+                    {t.strategies.map((item, idx) => (
                       <Reveal key={idx} delay={idx * 100} className="h-full">
                         <div className={`h-full rounded-2xl p-8 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border-t-4 border-transparent hover:border-[#0091cc] group flex flex-col relative overflow-hidden ${isDarkMode ? 'bg-gray-800' : 'bg-white'}`}>
                           
                           <div className="mb-6 flex justify-between items-start">
                             <div className={`w-14 h-14 rounded-full flex items-center justify-center group-hover:bg-[#0091cc] group-hover:text-white transition-colors duration-300 ${isDarkMode ? 'bg-gray-700' : 'bg-[#f0faf8]'}`}>
-                              {React.cloneElement(item.icon, { className: `w-7 h-7 group-hover:text-white text-[#0091cc]` })}
+                              {/* Icon handling remains tricky with translation maps if components are stored.
+                                  For simplicity in this structure, we'll map index to icon since the order is preserved. */}
+                              {idx === 0 && <Cpu className={`w-7 h-7 group-hover:text-white text-[#0091cc]`} />}
+                              {idx === 1 && <Play className={`w-7 h-7 group-hover:text-white text-[#0091cc]`} />}
+                              {idx === 2 && <Smartphone className={`w-7 h-7 group-hover:text-white text-[#0091cc]`} />}
+                              {idx === 3 && <Target className={`w-7 h-7 group-hover:text-white text-[#0091cc]`} />}
+                              {idx === 4 && <BarChart3 className={`w-7 h-7 group-hover:text-white text-[#0091cc]`} />}
+                              {idx === 5 && <Globe className={`w-7 h-7 group-hover:text-white text-[#0091cc]`} />}
                             </div>
                             <span className={`text-[#0091cc] text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider border ${isDarkMode ? 'border-gray-600' : 'border-[#b7e0f5]'}`}>
                               {item.type}
@@ -759,12 +880,12 @@
                           </h3>
                           
                           <p className={`leading-relaxed mb-8 flex-grow font-light ${isDarkMode ? 'text-gray-400' : 'text-[#00418a]/70'}`}>
-                            {item.description}
+                            {item.desc}
                           </p>
 
                           <div className={`border-t pt-4 mt-auto flex items-center justify-between ${isDarkMode ? 'border-gray-700' : 'border-[#f0faf8]'}`}>
                             <div>
-                              <span className={`block text-[10px] uppercase font-bold ${isDarkMode ? 'text-gray-500' : 'text-[#00418a]/50'}`}>Key Result</span>
+                              <span className={`block text-[10px] uppercase font-bold ${isDarkMode ? 'text-gray-500' : 'text-[#00418a]/50'}`}>{item.keyResult}</span>
                               <span className="text-[#0091cc] font-bold text-lg">{item.metric}</span>
                             </div>
                             <div className="w-12 h-8 opacity-0 group-hover:opacity-100 transition-opacity transform translate-x-[-10px] group-hover:translate-x-0 duration-300">
@@ -824,20 +945,16 @@
                       <Reveal delay={200}>
                         <div className="flex items-center space-x-2 mb-6">
                            <Zap className="text-[#f5a83f] fill-current" />
-                           <span className={`font-bold uppercase text-sm tracking-widest ${isDarkMode ? 'text-gray-400' : 'text-[#00418a]/60'}`}>Platform Spotlight</span>
+                           <span className={`font-bold uppercase text-sm tracking-widest ${isDarkMode ? 'text-gray-400' : 'text-[#00418a]/60'}`}>{t.platformBadge}</span>
                         </div>
                         <h2 className={`text-4xl mb-6 leading-tight brand-font ${isDarkMode ? 'text-white' : 'text-[#00418a]'}`}>
-                          The "HealthFirst" <br/> Unified Member Portal 
+                          {t.platformTitle} 
                         </h2>
                         <p className={`text-lg mb-8 leading-relaxed font-light ${isDarkMode ? 'text-gray-400' : 'text-[#00418a]/80'}`}>
-                          We deprecated legacy systems to launch a fully reactive, cloud-native member portal. The result? A unified experience that puts care at the center, regardless of where the member enters the ecosystem.
+                          {t.platformDesc}
                         </p>
                         <ul className="space-y-5 mb-10">
-                          {[
-                            "Real-time claims processing visibility",
-                            "Integrated virtual care scheduling API",
-                            "Family account management in one view"
-                          ].map((item, i) => (
+                          {t.platformList.map((item, i) => (
                             <li key={i} className={`flex items-start font-medium group cursor-default ${isDarkMode ? 'text-gray-300' : 'text-[#00418a]'}`}>
                               <div className={`rounded-full p-1 mr-4 mt-0.5 transition-colors text-[#0091cc] ${isDarkMode ? 'bg-gray-800 group-hover:bg-gray-700' : 'bg-[#f0faf8] group-hover:bg-[#b7e0f5]'}`}>
                                 <CheckCircle className="w-5 h-5" />
@@ -850,7 +967,7 @@
                             onClick={handleDisclaimerClick}
                             className={`px-8 py-4 rounded transition-all shadow-lg font-semibold text-sm tracking-wide ${isDarkMode ? 'bg-gray-800 text-white hover:bg-gray-700' : 'bg-[#00418a] text-white hover:bg-[#003366]'}`}
                         >
-                          View The Case Study
+                          {t.btnCaseStudy}
                         </button>
                       </Reveal>
                     </div>
@@ -871,11 +988,11 @@
                       <Heart className="w-8 h-8 text-white fill-current" />
                     </div>
                     <blockquote className="text-3xl md:text-4xl text-white italic leading-relaxed mb-10 brand-font">
-                      "In 2025, we stopped thinking about 'Digital Marketing' and 'Media' as separate disciplines. We proved that when you align the message with the medium, you don't just get impressions—you get solutions."
+                      "{t.quote}"
                     </blockquote>
                     <div className="text-white">
-                      <div className="font-bold text-xl tracking-wide brand-font">Sarah Jenkins</div>
-                      <div className="text-[#b7e0f5] uppercase text-sm font-semibold tracking-wider mt-1">VP, Enterprise Strategy</div>
+                      <div className="font-bold text-xl tracking-wide brand-font">{t.quoteAuthor}</div>
+                      <div className="text-[#b7e0f5] uppercase text-sm font-semibold tracking-wider mt-1">{t.quoteTitle}</div>
                     </div>
                   </Reveal>
                 </div>
@@ -891,7 +1008,7 @@
                            <span className="text-xl tracking-wide brand-font">Florida Blue</span>
                         </div>
                         <p className={`text-sm leading-relaxed mb-6 font-medium ${isDarkMode ? 'text-gray-500' : 'text-[#00418a]/60'}`}>
-                          Your Health Solutions Partner. <br/> A 2025 Internal Performance Report.
+                          {t.footerTagline}
                         </p>
                         <div className="flex space-x-4">
                           {[1,2,3].map(i => (
@@ -903,27 +1020,25 @@
                     </div>
                     
                     <div>
-                      <h4 className="font-bold text-lg mb-6 brand-font">Achievements</h4>
+                      <h4 className="font-bold text-lg mb-6 brand-font">{t.footerHeaders[0]}</h4>
                       <ul className={`space-y-3 text-sm font-medium ${isDarkMode ? 'text-gray-500' : 'text-[#00418a]/70'}`}>
-                        <li><a href="#" onClick={handleDisclaimerClick} className="hover:text-[#0091cc] transition-colors">Media Efficiency</a></li>
-                        <li><a href="#" onClick={handleDisclaimerClick} className="hover:text-[#0091cc] transition-colors">Telehealth Adoption</a></li>
-                        <li><a href="#" onClick={handleDisclaimerClick} className="hover:text-[#0091cc] transition-colors">AI Innovation</a></li>
-                        <li><a href="#" onClick={handleDisclaimerClick} className="hover:text-[#0091cc] transition-colors">Geo-Targeting</a></li>
+                        {t.footerLinks1.map((link, i) => (
+                            <li key={i}><a href="#" onClick={handleDisclaimerClick} className="hover:text-[#0091cc] transition-colors">{link}</a></li>
+                        ))}
                       </ul>
                     </div>
 
                     <div>
-                      <h4 className="font-bold text-lg mb-6 brand-font">Internal Resources</h4>
+                      <h4 className="font-bold text-lg mb-6 brand-font">{t.footerHeaders[1]}</h4>
                       <ul className={`space-y-3 text-sm font-medium ${isDarkMode ? 'text-gray-500' : 'text-[#00418a]/70'}`}>
-                        <li><a href="#" onClick={handleDisclaimerClick} className="hover:text-[#0091cc] transition-colors">Brand Guidelines 2025</a></li>
-                        <li><a href="#" onClick={handleDisclaimerClick} className="hover:text-[#0091cc] transition-colors">Media Asset Library</a></li>
-                        <li><a href="#" onClick={handleDisclaimerClick} className="hover:text-[#0091cc] transition-colors">Team Directory</a></li>
-                        <li><a href="#" onClick={handleDisclaimerClick} className="hover:text-[#0091cc] transition-colors">Submit a Ticket</a></li>
+                        {t.footerLinks2.map((link, i) => (
+                            <li key={i}><a href="#" onClick={handleDisclaimerClick} className="hover:text-[#0091cc] transition-colors">{link}</a></li>
+                        ))}
                       </ul>
                     </div>
 
                     <div>
-                      <h4 className="font-bold text-lg mb-6 brand-font">Contact Strategy</h4>
+                      <h4 className="font-bold text-lg mb-6 brand-font">{t.footerHeaders[2]}</h4>
                       <ul className={`space-y-3 text-sm font-medium ${isDarkMode ? 'text-gray-500' : 'text-[#00418a]/70'}`}>
                         <li className="flex items-center"><span className="w-2 h-2 bg-[#0091cc] rounded-full mr-2"></span> strategy@floridablue.com</li>
                         <li className="flex items-center"><span className="w-2 h-2 bg-[#0091cc] rounded-full mr-2"></span> (800) 555-0123</li>
@@ -933,11 +1048,11 @@
                   </div>
                   
                   <div className={`border-t pt-8 flex flex-col md:flex-row justify-between items-center text-xs font-semibold ${isDarkMode ? 'border-gray-800 text-gray-600' : 'border-[#b7e0f5] text-[#00418a]/50'}`}>
-                    <p>&copy; 2025 Florida Blue. Internal Use Only.</p>
+                    <p>{t.footerCopyright}</p>
                     <div className="flex space-x-6 mt-4 md:mt-0">
-                      <a href="#" onClick={handleDisclaimerClick} className="hover:text-[#0091cc] transition-colors">Privacy Policy</a>
-                      <a href="#" onClick={handleDisclaimerClick} className="hover:text-[#0091cc] transition-colors">Terms of Use</a>
-                      <a href="#" onClick={handleDisclaimerClick} className="hover:text-[#0091cc] transition-colors">Accessibility</a>
+                      {t.footerLegal.map((link, i) => (
+                          <a key={i} href="#" onClick={handleDisclaimerClick} className="hover:text-[#0091cc] transition-colors">{link}</a>
+                      ))}
                     </div>
                   </div>
                 </div>
