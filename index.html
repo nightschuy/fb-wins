@@ -99,7 +99,13 @@
           Monitor,
           Moon,
           Sun,
-          Languages
+          Languages,
+          Lightbulb,
+          FlaskConical,
+          Megaphone,
+          Sparkles,
+          UserCheck,
+          LineChart
         } from 'lucide-react';
 
         // --- CONTENT DICTIONARY FOR TRANSLATION ---
@@ -108,38 +114,40 @@
                 nav: ['2025 Overview', 'Media Mix', 'Digital Strategy', 'Future Roadmap'],
                 danceMode: 'Dance Mode',
                 heroBadge: '2025 Strategic Review',
-                heroTitle: <>Let's find the <br/> healthiest you. <br/><span className="text-[#b7e0f5]">Let's Keep Solving.</span></>,
-                heroDesc: <>A unified year of impact. We bridged the gap between complex data and human care, delivering <span className="font-semibold text-white">15 million personalized health solutions</span> to our communities.</>,
-                btnExplore: 'Explore Solutions',
-                btnWatch: 'Watch 2025 Recap',
+                heroTitle: <>Let's Keep <br/> Winning.</>,
+                heroDesc: <>Winning: it's not just for athletes, anymore. <br/> Although we are also world-class athletes.</>,
+                btnExplore: 'Explore Wins',
+                btnWatch: 'Watch cute dog videos',
+                watchLink: 'https://youtube.com/shorts/2_pGf-uxWtA?si=kezltyMsl7LsviKb',
                 stats: [
-                    { label: "Total Reach", value: 140, suffix: "M+", desc: "Across Paid & Owned Channels" },
-                    { label: "Media ROI", value: 35, suffix: "%", desc: "Increase in efficiency YoY" },
-                    { label: "Active Members", value: 15, suffix: "M", desc: "Engaged digitally monthly" },
-                    { label: "Conversion Rate", value: 4, suffix: "x", desc: "Lift from personalization" }
+                    { label: "MEDIA COST SAVINGS", value: ">$2.6M", suffix: "", desc: "Reinvested into working media" },
+                    { label: "SALES CONVERSION RATE", value: "+3.4", suffix: "%", desc: "'25 v '24 media ROMI" },
+                    { label: "IU65 SHOPPERS", value: "430K", suffix: "+", desc: "Driven to CWS" },
+                    { label: "ORGANIC TRAFFIC", value: "+2.2", suffix: "%", desc: "YoY on FloridaBlue.com" }
                 ],
-                strategyTitle: 'Integrated Health Solutions',
-                strategyDesc: 'In 2025, we dissolved the silos between "Media" and "Product". By combining our media buying power with our digital product innovations, we created a seamless ecosystem for our members.',
+                strategyTitle: "We Don't Guess. We Measure.",
+                strategyDesc: "Our teams happily occupy the spaces between data and even more data. We plan with precision, optimize in-flight, and report like our dashboards are Olympic sport. Every tactic earns its place because every tactic is measured.",
                 strategies: [
-                    { title: "Generative Search Optimization", type: "Media Strategy", desc: "Shifted 40% of SEO budget to optimize for AI answer engines, securing top visibility for 'Health Plan' queries.", metric: "12% Organic Traffic Lift", keyResult: "Key Result" },
-                    { title: "Programmatic TV Buying", type: "Media Strategy", desc: "Unified linear and streaming TV buys under a single programmatic umbrella to target specific health-intent audiences.", metric: "98% Ad Completion Rate", keyResult: "Key Result" },
-                    { title: "Omnichannel Health Journeys", type: "Media Strategy", desc: "Launched a unified dashboard integrating claims and wellness. If a user clicks an ad, their app experience adapts instantly.", metric: "35% Lower Friction", keyResult: "Key Result" },
-                    { title: "Predictive Audience Modeling", type: "Digital Marketing", desc: "Used first-party data to build 'Health-Ready' lookalike audiences, suppressing current members to focus purely on efficiency.", metric: "$12M Media Savings", keyResult: "Key Result" },
-                    { title: "AI-Driven Preventative Care", type: "Digital Marketing", desc: "Deployed predictive models to send personalized screening reminders via email and SMS, improving early detection rates.", metric: "2.1M Reminders Sent", keyResult: "Key Result" },
-                    { title: "Inclusive Design System", type: "Digital Marketing", desc: "Achieved WCAG 2.2 AAA compliance across all media assets and public-facing portals, ensuring access for every Floridian.", metric: "100% Compliant", keyResult: "Key Result" }
+                    { title: "Closing The Creative Insights Loop", type: "Media Strategy", desc: "Developed and implemented net new creative insights reports, driving significant improvements in campaign performance.", metric: "5% decrease in cost per lead", keyResult: "Key Result" },
+                    { title: <>Innovation Lab <br/> Success</>, type: "Media Strategy", desc: "Launched Digital Innovation Lab for OEP, exceeding planned lead targets despite reduced budgets.", metric: "43% more leads than planned", keyResult: "Key Result" },
+                    { title: <>Brand Media <br/> Impact</>, type: "Media Strategy", desc: "Nielsen MMM insights showed Brand media contributed to 50% of U65 enrollments. Learnings used to plan incremental OEP media.", metric: "42% increase in U65 halo enrollments", keyResult: "Key Result" },
+                    { title: "Enhanced IU65 Products Experience", type: "Digital Marketing", desc: "Evolved IU65 product content and UX, refined health solutions messaging, incorporated improved product brochure pages.", metric: "+243% Organic Traffic", keyResult: "Key Result" },
+                    { title: "Advanced Content Personalization", type: "Digital Marketing", desc: "Matured personalization strategy across key pages; tailored to IU65, Medicare, and Member audiences.", metric: "+48% Overall Click Rate", keyResult: "Key Result" },
+                    { title: "Matured Reporting Capabilities", type: "Digital Marketing", desc: "Implemented advanced Google Analytics (GA) tracking solutions, enabling more accurate traffic attribution.", metric: "98.6% Attributed Traffic", keyResult: "Key Result" }
                 ],
                 platformBadge: 'Platform Spotlight',
-                platformTitle: <>The "HealthFirst" <br/> Unified Member Portal</>,
-                platformDesc: 'We deprecated legacy systems to launch a fully reactive, cloud-native member portal. The result? A unified experience that puts care at the center, regardless of where the member enters the ecosystem.',
+                platformTitle: <>Smarter OEP Wins, <br/> No Luck Required</>,
+                platformDesc: 'We never stop optimizing. Data-fueled media and digital strategy turn urgency into action - boosting OEP leads 52% above goal and cutting media cost per lead 42% by testing, learning and pivoting faster than the market.',
                 platformList: [
-                    "Real-time claims processing visibility",
-                    "Integrated virtual care scheduling API",
-                    "Family account management in one view"
+                    "Expert online guidance helps members navigate changes",
+                    "Sharper CTAs turn more shoppers into leads",
+                    "Optimized media mix drives greater efficiency"
                 ],
-                btnCaseStudy: 'View The Case Study',
-                quote: "In 2025, we stopped thinking about 'Digital Marketing' and 'Media' as separate disciplines. We proved that when you align the message with the medium, you don't just get impressions—you get solutions.",
-                quoteAuthor: 'Sarah Jenkins',
-                quoteTitle: 'VP, Enterprise Strategy',
+                btnCaseStudy: 'See The Results',
+                quote: "I'm blown away by the incredible work of Digital Marketing and Media Strategy this year. They're the true MVPs of our marketing organization. Special shoutout to Schuyler, the mastermind behind this resource.",
+                quoteAuthor: 'Lynn Rossi',
+                quoteTitle: 'Chief Marketing Officer',
+                qrTitle: 'Scan to experience yourself',
                 footerTagline: <>Your Health Solutions Partner. <br/> A 2025 Internal Performance Report.</>,
                 footerHeaders: ['Achievements', 'Internal Resources', 'Contact Strategy'],
                 footerLinks1: ['Media Efficiency', 'Telehealth Adoption', 'AI Innovation', 'Geo-Targeting'],
@@ -151,38 +159,40 @@
                 nav: ['Resumen 2025', 'Mezcla de Medios', 'Estrategia Digital', 'Hoja de Ruta'],
                 danceMode: 'Modo Baile',
                 heroBadge: 'Revisión Estratégica 2025',
-                heroTitle: <>Encontremos tu <br/> mejor versión. <br/><span className="text-[#b7e0f5]">Sigamos Solucionando.</span></>,
-                heroDesc: <>Un año unificado de impacto. Cerramos la brecha entre datos complejos y atención humana, entregando <span className="font-semibold text-white">15 millones de soluciones de salud</span> a nuestras comunidades.</>,
-                btnExplore: 'Explorar Soluciones',
-                btnWatch: 'Ver Resumen 2025',
+                heroTitle: <>Sigamos <br/> Ganando.</>,
+                heroDesc: <>Ganar: ya no es solo para atletas. Aunque también somos atletas de clase mundial.</>,
+                btnExplore: 'Explorar Victorias',
+                btnWatch: 'Ver videos de perros',
+                watchLink: 'https://youtube.com/shorts/2_pGf-uxWtA?si=kezltyMsl7LsviKb',
                 stats: [
-                    { label: "Alcance Total", value: 140, suffix: "M+", desc: "En canales pagados y propios" },
-                    { label: "ROI de Medios", value: 35, suffix: "%", desc: "Aumento en eficiencia anual" },
-                    { label: "Miembros Activos", value: 15, suffix: "M", desc: "Comprometidos digitalmente" },
-                    { label: "Tasa Conversión", value: 4, suffix: "x", desc: "Aumento por personalización" }
+                    { label: "AHORRO EN MEDIOS", value: ">$2.6M", suffix: "", desc: "Reinvertido en medios de trabajo" },
+                    { label: "TASA DE CONVERSIÓN", value: "+3.4", suffix: "%", desc: "ROMI de medios '25 vs '24" },
+                    { label: "COMPRADORES IU65", value: "430K", suffix: "+", desc: "Dirigido a CWS" },
+                    { label: "TRÁFICO ORGÁNICO", value: "+2.2", suffix: "%", desc: "Anual en FloridaBlue.com" }
                 ],
-                strategyTitle: 'Soluciones de Salud Integradas',
-                strategyDesc: 'En 2025, disolvimos los silos entre "Medios" y "Producto". Al combinar nuestro poder de compra de medios con nuestras innovaciones de productos digitales, creamos un ecosistema perfecto para nuestros miembros.',
+                strategyTitle: 'No Adivinamos. Medimos.',
+                strategyDesc: 'Nuestros equipos ocupan felizmente los espacios entre datos y más datos. Planificamos con precisión, optimizamos en vuelo e informamos como si nuestros tableros fueran deporte olímpico. Cada táctica se gana su lugar porque cada táctica se mide.',
                 strategies: [
-                    { title: "Optimización de Búsqueda Generativa", type: "Estrategia de Medios", desc: "Se reasignó el 40% del presupuesto SEO para optimizar motores de respuesta IA, asegurando visibilidad para consultas de 'Plan de Salud'.", metric: "12% Aumento Tráfico", keyResult: "Resultado Clave" },
-                    { title: "Compra de TV Programática", type: "Estrategia de Medios", desc: "Compras unificadas de TV lineal y streaming bajo un paraguas programático para dirigirse a audiencias con intención de salud.", metric: "98% Tasa Completada", keyResult: "Resultado Clave" },
-                    { title: "Viajes de Salud Omnicanal", type: "Estrategia de Medios", desc: "Lanzamiento de un panel unificado integrando reclamos y bienestar. Si un usuario hace clic en un anuncio, su app se adapta.", metric: "35% Menos Fricción", keyResult: "Resultado Clave" },
-                    { title: "Modelado de Audiencia Predictivo", type: "Marketing Digital", desc: "Uso de datos propios para crear audiencias similares 'Listas para Salud', suprimiendo miembros actuales para eficiencia.", metric: "$12M Ahorro Medios", keyResult: "Resultado Clave" },
-                    { title: "Atención Preventiva Impulsada por IA", type: "Marketing Digital", desc: "Modelos predictivos para enviar recordatorios personalizados por correo y SMS, mejorando tasas de detección temprana.", metric: "2.1M Recordatorios", keyResult: "Resultado Clave" },
-                    { title: "Sistema de Diseño Inclusivo", type: "Marketing Digital", desc: "Cumplimiento WCAG 2.2 AAA en todos los activos de medios y portales públicos, asegurando acceso para cada floridano.", metric: "100% Cumplimiento", keyResult: "Resultado Clave" }
+                    { title: "Cerrando el Ciclo de Insights Creativos", type: "Estrategia de Medios", desc: "Se desarrollaron nuevos informes de insights creativos, impulsando mejoras significativas en el rendimiento de la campaña.", metric: "5% menos costo por lead", keyResult: "Resultado Clave" },
+                    { title: "Éxito del Laboratorio de Innovación", type: "Estrategia de Medios", desc: "Lanzamiento del Laboratorio de Innovación Digital para OEP, superando los objetivos de leads a pesar de presupuestos reducidos.", metric: "43% más leads", keyResult: "Resultado Clave" },
+                    { title: "Impacto de Medios de Marca", type: "Estrategia de Medios", desc: "Insights de Nielsen mostraron que los medios de marca contribuyeron al 50% de las inscripciones U65.", metric: "42% aumento halo U65", keyResult: "Resultado Clave" },
+                    { title: "Experiencia Mejorada Productos IU65", type: "Marketing Digital", desc: "Contenido y UX de productos IU65 evolucionados, mensajes de soluciones de salud refinados.", metric: "+243% Tráfico Orgánico", keyResult: "Resultado Clave" },
+                    { title: "Personalización Avanzada de Contenido", type: "Marketing Digital", desc: "Estrategia de personalización madurada en páginas clave; adaptada a audiencias IU65, Medicare y Miembros.", metric: "+48% Tasa de Clics", keyResult: "Resultado Clave" },
+                    { title: "Capacidades de Reporte Maduradas", type: "Marketing Digital", desc: "Implementación de soluciones avanzadas de rastreo de Google Analytics (GA) para una atribución más precisa.", metric: "98.6% Tráfico Atribuido", keyResult: "Resultado Clave" }
                 ],
                 platformBadge: 'Plataforma Destacada',
-                platformTitle: <>El Portal Unificado <br/> "HealthFirst"</>,
-                platformDesc: 'Desaprobamos sistemas heredados para lanzar un portal nativo de la nube. ¿El resultado? Una experiencia unificada que pone la atención en el centro, sin importar dónde entre el miembro.',
+                platformTitle: <>Victorias OEP Inteligentes, <br/> Sin Suerte Requerida</>,
+                platformDesc: 'Nunca dejamos de optimizar. La estrategia digital y de medios impulsada por datos convierte la urgencia en acción: aumentando los leads de OEP un 52% por encima del objetivo.',
                 platformList: [
-                    "Visibilidad de procesamiento de reclamos en tiempo real",
-                    "API integrada de programación de atención virtual",
-                    "Gestión de cuentas familiares en una sola vista"
+                    "Guía experta en línea ayuda a navegar cambios",
+                    "CTAs más nítidos convierten más compradores",
+                    "Mezcla de medios optimizada impulsa eficiencia"
                 ],
-                btnCaseStudy: 'Ver Estudio de Caso',
-                quote: "En 2025, dejamos de pensar en 'Marketing Digital' y 'Medios' como disciplinas separadas. Demostramos que cuando alineas el mensaje con el medio, no solo obtienes impresiones, obtienes soluciones.",
-                quoteAuthor: 'Sarah Jenkins',
-                quoteTitle: 'VP, Estrategia Empresarial',
+                btnCaseStudy: 'Ver Los Resultados',
+                quote: "Estoy impresionada por el increíble trabajo de Marketing Digital y Estrategia de Medios este año. Son los verdaderos MVP de nuestra organización. Un reconocimiento especial a Schuyler, el cerebro detrás de este recurso.",
+                quoteAuthor: 'Lynn Rossi',
+                quoteTitle: 'Directora de Marketing',
+                qrTitle: 'Escanea para vivir la experiencia',
                 footerTagline: <>Tu Socio en Soluciones de Salud. <br/> Informe de Desempeño Interno 2025.</>,
                 footerHeaders: ['Logros', 'Recursos Internos', 'Estrategia de Contacto'],
                 footerLinks1: ['Eficiencia de Medios', 'Adopción Telemedicina', 'Innovación IA', 'Geo-Targeting'],
@@ -198,6 +208,7 @@
             const [isTyping, setIsTyping] = useState(false);
             const [darkMode, setDarkMode] = useState(false); // State for dark mode
             const [showSettings, setShowSettings] = useState(false); // State for dropdown visibility
+            // Updated Prompt to match context of building the site
             const fullPrompt = "Can you build me a website to show Enterprise Digital Marketing and Media Strategy's 2025 achievements?";
 
             const handleBegin = () => {
@@ -768,9 +779,9 @@
               {/* Increased bottom padding on mobile (pb-32) to prevent content cutoff by stats bar overlap */}
               <div className="pt-24 pb-32 md:pt-32 md:pb-40 bg-gradient-to-br from-[#00418a] to-[#0091cc] relative overflow-hidden">
                 
-                {/* Updated Arrows: moved closer to center (right-40) and made larger (w-96 h-96) */}
-                <div className="absolute right-40 top-1/4 opacity-20 hidden lg:block">
-                   <ArrowDevice className="w-96 h-96" color="#b7e0f5" />
+                {/* Updated Arrows: padded back to right (right-20) and slightly smaller (w-80 h-80) to avoid overlap */}
+                <div className="absolute right-20 top-1/4 opacity-20 hidden lg:block">
+                   <ArrowDevice className="w-80 h-80" color="#b7e0f5" />
                 </div>
 
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -803,15 +814,17 @@
                           {t.btnExplore}
                           <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                         </button>
-                        <div 
-                            onClick={handleDisclaimerClick}
+                        <a 
+                            href={t.watchLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="flex items-center text-white font-semibold cursor-pointer group"
                         >
                           <div className="w-12 h-12 rounded-full border-2 border-white flex items-center justify-center mr-3 group-hover:bg-white group-hover:text-[#00418a] transition-colors">
                             <Play className="w-5 h-5 ml-1 fill-current" />
                           </div>
                           {t.btnWatch}
-                        </div>
+                        </a>
                       </div>
                     </Reveal>
                   </div>
@@ -827,8 +840,12 @@
                         <div className="absolute top-0 right-0 p-2 opacity-0 group-hover:opacity-20 transition-opacity">
                            <ArrowDevice className="w-16 h-16" color="#ffffff" />
                         </div>
+                        {/* Modified Counter logic to handle strings like ">$2.6M" */}
                         <div className="text-4xl md:text-5xl brand-font mb-2 flex justify-center items-baseline text-[#67e0f5]">
-                          <Counter end={stat.value} suffix={stat.suffix} />
+                           {/* If value is a simple number, animate. If string with symbols, just show. 
+                               For simplicity in this update, we will just show the text value since symbols > $ + are mixed in.
+                           */}
+                           <span>{stat.value}{stat.suffix}</span>
                         </div>
                         <div className="text-xs font-bold uppercase tracking-widest text-[#b7e0f5] mb-2">{stat.label}</div>
                         <p className="text-white/70 text-sm">{stat.desc}</p>
@@ -861,14 +878,13 @@
                           
                           <div className="mb-6 flex justify-between items-start">
                             <div className={`w-14 h-14 rounded-full flex items-center justify-center group-hover:bg-[#0091cc] group-hover:text-white transition-colors duration-300 ${isDarkMode ? 'bg-gray-700' : 'bg-[#f0faf8]'}`}>
-                              {/* Icon handling remains tricky with translation maps if components are stored.
-                                  For simplicity in this structure, we'll map index to icon since the order is preserved. */}
-                              {idx === 0 && <Cpu className={`w-7 h-7 group-hover:text-white text-[#0091cc]`} />}
-                              {idx === 1 && <Play className={`w-7 h-7 group-hover:text-white text-[#0091cc]`} />}
-                              {idx === 2 && <Smartphone className={`w-7 h-7 group-hover:text-white text-[#0091cc]`} />}
-                              {idx === 3 && <Target className={`w-7 h-7 group-hover:text-white text-[#0091cc]`} />}
-                              {idx === 4 && <BarChart3 className={`w-7 h-7 group-hover:text-white text-[#0091cc]`} />}
-                              {idx === 5 && <Globe className={`w-7 h-7 group-hover:text-white text-[#0091cc]`} />}
+                              {/* Icon handling updated to align with new titles */}
+                              {idx === 0 && <Lightbulb className={`w-7 h-7 group-hover:text-white text-[#0091cc]`} />}
+                              {idx === 1 && <FlaskConical className={`w-7 h-7 group-hover:text-white text-[#0091cc]`} />}
+                              {idx === 2 && <Megaphone className={`w-7 h-7 group-hover:text-white text-[#0091cc]`} />}
+                              {idx === 3 && <Sparkles className={`w-7 h-7 group-hover:text-white text-[#0091cc]`} />}
+                              {idx === 4 && <UserCheck className={`w-7 h-7 group-hover:text-white text-[#0091cc]`} />}
+                              {idx === 5 && <LineChart className={`w-7 h-7 group-hover:text-white text-[#0091cc]`} />}
                             </div>
                             <span className={`text-[#0091cc] text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider border ${isDarkMode ? 'border-gray-600' : 'border-[#b7e0f5]'}`}>
                               {item.type}
@@ -996,6 +1012,22 @@
                     </div>
                   </Reveal>
                 </div>
+              </div>
+
+              {/* QR Code Section */}
+              <div className={`py-24 text-center ${isDarkMode ? 'bg-gray-800' : 'bg-white'}`}>
+                <Reveal>
+                    <h2 className={`text-3xl brand-font mb-10 tracking-wide ${isDarkMode ? 'text-white' : 'text-[#00418a]'}`}>
+                        {t.qrTitle}
+                    </h2>
+                    <div className="inline-block p-4 bg-white rounded-2xl shadow-xl border-4 border-[#0091cc]/20">
+                        <img 
+                            src="https://raw.githubusercontent.com/nightschuy/fb-wins/refs/heads/main/qr.jpeg" 
+                            alt="Scan to experience" 
+                            className="w-64 h-64 object-contain"
+                        />
+                    </div>
+                </Reveal>
               </div>
 
               {/* Footer */}
