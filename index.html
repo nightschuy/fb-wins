@@ -125,14 +125,14 @@
                     { label: "IU65 SHOPPERS", value: "430K", suffix: "+", desc: "Driven to CWS" },
                     { label: "ORGANIC TRAFFIC", value: "+2.2", suffix: "%", desc: "YoY on FloridaBlue.com" }
                 ],
-                strategyTitle: "We don't guess. We measure.",
+                strategyTitle: "We Don't Guess. We Measure.",
                 strategyDesc: "Our teams happily occupy the spaces between data and even more data. We plan with precision, optimize in-flight, and report like our dashboards are Olympic sport. Every tactic earns its place because every tactic is measured.",
                 strategies: [
                     { title: "Closing the creative insights loop", type: "Media Strategy", desc: "Developed and implemented net new creative insights reports, driving significant improvements in campaign performance.", metric: "5% decrease in cost per lead", keyResult: "Key Result" },
                     { title: "Matured reporting capabilities", type: "Digital Marketing", desc: "Implemented advanced Google Analytics (GA) tracking solutions, enabling more accurate traffic attribution.", metric: "98.6% attributed traffic", keyResult: "Key Result" },
                     { title: <>Innovation lab <br/> success</>, type: "Media Strategy", desc: "Launched Digital Innovation Lab for OEP, exceeding planned lead targets despite reduced budgets.", metric: "43% more leads than planned", keyResult: "Key Result" },
                     { title: "Advanced content personalization", type: "Digital Marketing", desc: "Matured personalization strategy across key pages; tailored to IU65, Medicare, and Member audiences.", metric: "+48% overall click rate", keyResult: "Key Result" },
-                    { title: <>Brand media <br/> impact</>, type: "Media Strategy", desc: "Nielsen MMM insights showed Brand media contributed to 50% of U65 enrollments. Learnings used to plan incremental Q4 media.", metric: "+42% projected U65 halo enrollments", keyResult: "Key Result" },
+                    { title: <>Brand media <br/> impact</>, type: "Media Strategy", desc: "Nielsen MMM insights showed Brand media contributed to 50% of U65 enrollments. Learnings used to plan incremental Q4 media.", metric: "+42% proj. U65 halo enrollments", keyResult: "Key Result" },
                     { title: "Enhanced IU65 products experience", type: "Digital Marketing", desc: "Evolved IU65 product content and UX, refined health solutions messaging, incorporated improved product brochure pages.", metric: "+243% organic traffic", keyResult: "Key Result" }
                 ],
                 platformBadge: 'Platform spotlight',
@@ -177,7 +177,7 @@
                     { title: "Capacidades de reporte maduradas", type: "Marketing Digital", desc: "Implementación de soluciones avanzadas de rastreo de Google Analytics (GA) para una atribución más precisa.", metric: "98.6% tráfico atribuido", keyResult: "Resultado Clave" },
                     { title: "Éxito del laboratorio de innovación", type: "Estrategia de Medios", desc: "Lanzamiento del Laboratorio de Innovación Digital para OEP, superando los objetivos de leads a pesar de presupuestos reducidos.", metric: "43% más leads", keyResult: "Resultado Clave" },
                     { title: "Personalización avanzada de contenido", type: "Marketing Digital", desc: "Estrategia de personalización madurada en páginas clave; adaptada a audiencias IU65, Medicare y Miembros.", metric: "+48% tasa de clics", keyResult: "Resultado Clave" },
-                    { title: "Impacto de medios de marca", type: "Estrategia de Medios", desc: "Insights de Nielsen mostraron que los medios de marca contribuyeron al 50% de las inscripciones U65. Aprendizajes usados para planificar medios incrementales del Q4.", metric: "+42% proyectado en inscripciones halo U65", keyResult: "Resultado Clave" },
+                    { title: "Impacto de medios de marca", type: "Estrategia de Medios", desc: "Insights de Nielsen mostraron que los medios de marca contribuyeron al 50% de las inscripciones U65. Aprendizajes usados para planificar medios incrementales del Q4.", metric: "+42% proy. inscripciones halo U65", keyResult: "Resultado Clave" },
                     { title: "Experiencia mejorada productos IU65", type: "Marketing Digital", desc: "Contenido y UX de productos IU65 evolucionados, mensajes de soluciones de salud refinados.", metric: "+243% tráfico orgánico", keyResult: "Resultado Clave" }
                 ],
                 platformBadge: 'Plataforma destacada',
@@ -907,14 +907,15 @@
                             {item.title}
                           </h3>
                           
-                          {/* UPDATED: Changed font-light to font-medium for thicker text */}
-                          <p className={`leading-relaxed mb-8 flex-grow font-medium ${isDarkMode ? 'text-gray-400' : 'text-[#00418a]/70'}`}>
+                          {/* UPDATED: Changed text color opacity for darker copy (text-[#00418a]/90) and isDarkMode text-gray-300 */}
+                          <p className={`leading-relaxed mb-8 flex-grow font-medium ${isDarkMode ? 'text-gray-300' : 'text-[#00418a]/90'}`}>
                             {item.desc}
                           </p>
 
                           <div className={`border-t pt-4 mt-auto flex items-center justify-between ${isDarkMode ? 'border-gray-700' : 'border-[#f0faf8]'}`}>
                             <div>
                               <span className={`block text-[10px] uppercase font-bold ${isDarkMode ? 'text-gray-500' : 'text-[#00418a]/50'}`}>{item.keyResult}</span>
+                              {/* UPDATED: Reverted font size back to text-lg */}
                               <span className="text-[#0091cc] font-bold text-lg">{item.metric}</span>
                             </div>
                             <div className="w-12 h-8 opacity-0 group-hover:opacity-100 transition-opacity transform translate-x-[-10px] group-hover:translate-x-0 duration-300">
@@ -979,7 +980,8 @@
                         <h2 className={`text-4xl mb-6 leading-tight brand-font ${isDarkMode ? 'text-white' : 'text-[#00418a]'}`}>
                           {t.platformTitle} 
                         </h2>
-                        <p className={`text-lg mb-8 leading-relaxed font-light ${isDarkMode ? 'text-gray-400' : 'text-[#00418a]/80'}`}>
+                        {/* UPDATED: Darker copy for spotlight section (text-[#00418a]/90) */}
+                        <p className={`text-lg mb-8 leading-relaxed font-light ${isDarkMode ? 'text-gray-300' : 'text-[#00418a]/90'}`}>
                           {t.platformDesc}
                         </p>
                         <ul className="space-y-5 mb-10">
