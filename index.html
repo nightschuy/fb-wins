@@ -912,13 +912,13 @@
                             {item.desc}
                           </p>
 
-                          <div className={`border-t pt-4 mt-auto flex items-center justify-between ${isDarkMode ? 'border-gray-700' : 'border-[#f0faf8]'}`}>
-                            <div>
+                          <div className={`border-t pt-4 mt-auto flex items-end justify-between ${isDarkMode ? 'border-gray-700' : 'border-[#f0faf8]'}`}>
+                            <div className="flex-1 min-w-0 mr-4">
                               <span className={`block text-[10px] uppercase font-bold ${isDarkMode ? 'text-gray-500' : 'text-[#00418a]/50'}`}>{item.keyResult}</span>
-                              {/* UPDATED: Reverted font size back to text-lg */}
-                              <span className="text-[#0091cc] font-bold text-lg">{item.metric}</span>
+                              {/* UPDATED: Removed 'truncate', added 'whitespace-nowrap', and shrunk font to 'text-sm' to fit on one line */}
+                              <span className="text-[#0091cc] font-bold text-sm block whitespace-nowrap">{item.metric}</span>
                             </div>
-                            <div className="w-12 h-8 opacity-0 group-hover:opacity-100 transition-opacity transform translate-x-[-10px] group-hover:translate-x-0 duration-300">
+                            <div className="w-12 h-8 opacity-0 group-hover:opacity-100 transition-opacity transform translate-x-[-10px] group-hover:translate-x-0 duration-300 flex-shrink-0">
                                 <ArrowDevice className="w-full h-full" color="#f5a83f" /> 
                             </div>
                           </div>
